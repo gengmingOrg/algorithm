@@ -6,14 +6,12 @@
 var removeElement = function(nums, val) {
   let j = 0
   for (var i = 0; i < nums.length; i++) {
-
-    if(val == nums[i]){
-      j--
-    }else {
-        nums[j] = nums[i]
+    if(val != nums[i]){
+      nums[j] = nums[i]
+      j++
     }
-
-    j++
   }
   return j
 };
+
+// 快慢指针的题
