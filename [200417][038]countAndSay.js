@@ -27,4 +27,6 @@ var countAndSay = function(n) {
 function changeStr(str, index, end ,changeStr){
 	 return str.substr(0, index) + changeStr+ str.substr(index + end);
 }
-//总结，在替换字符串的时候 不是很理解 替换的位置 导致自己在 指针移动的位置上面 花了很多心思
+/***
+总结，在替换字符串的时候 不是很理解 替换的位置 导致自己在 指针移动的位置上面 花了很多心思
+*/
