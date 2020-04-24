@@ -1,25 +1,21 @@
 /**
- * @param {number} n
+ * @param {number} N
  * @return {number}
  */
-var tribonacci = function(n) {
-    // var arr = [0,1,1]
-    // for(let i = 3 ; i <= n ;i++){
-    //     arr[i] = arr[i-1] +  arr[i-2] + arr[i-3]
+var fib = function(N) {
+    // let arr = [0,1,1,2]
+    // for(let i = 3; i <= N; i++ ){
+    //     arr[i] = arr[i-1]+arr[i-2]
     // }
-    // return arr [n]
-    if(n == 0){
+    // return arr[N]
+    if(N == 0 ){
         return 0
     }
     let first = 0
     let second = 1
-    let three = 1
-    for(let i = 3 ; i <= n ;i++){
-        let temp2 =  second
-        let temp3 = three
-        three = three + second + first
-        first = temp2
-        second = temp3
+    for(let i = 2; i<= N ;i++){
+        [second,first] = [first,second]
+        second = second + first
     }
-    return three
+    return second
 };

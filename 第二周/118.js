@@ -21,9 +21,11 @@ var generate = function(numRows) {
     for (var i = 2; i < numRows; i++) {
       var temp = []
       // temp = arr[i-1]
-      for (let j = 0; j + 1 < arr[i].length; j++) {
-        temp[j+1] = arr[i][j] + arr[j+1]
+      for (let j = 0; j + 1 < arr[i-1].length; j++) {
+        temp[j+1] = arr[i-1][j] + arr[i-1][j+1]
       }
+      temp.unshift(1)
+
       arr.push(temp)
 
     }
