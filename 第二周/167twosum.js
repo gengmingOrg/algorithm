@@ -23,14 +23,14 @@ var twoSum = function(numbers, target) {
   //   }
   // }
 
-  Map<Integer, Integer> map = new HashMap<>();
-  for(int i = 0; i< nums.length; i++) {
-     if(map.containsKey(target - nums[i])) {
-         return new int[] {map.get(target-nums[i]),i};
-     }
-     map.put(nums[i], i);
-  }
-  throw new IllegalArgumentException("No two sum solution");
+  // Map<Integer, Integer> map = new HashMap<>();
+  // for(int i = 0; i< nums.length; i++) {
+  //    if(map.containsKey(target - nums[i])) {
+  //        return new int[] {map.get(target-nums[i]),i};
+  //    }
+  //    map.put(nums[i], i);
+  // }
+  // throw new IllegalArgumentException("No two sum solution");
 
   var map = new Map()
   for (var i = 0; i < nums.length; i++) {
@@ -39,5 +39,5 @@ var twoSum = function(numbers, target) {
     }
     map.set(nums[i], i)
   }
-
+  return []
 };

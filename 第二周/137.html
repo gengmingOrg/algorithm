@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var singleNumber = function(nums) {
+      var seenOnce = 0, seenTwice = 0;
+
+      for (var num of nums) {
+        console.log(~seenTwice);
+        console.log(seenOnce ^ num);
+        console.log(~seenTwice & (seenOnce ^ num));
+        seenOnce = ~seenTwice & (seenOnce ^ num);
+        // console.log(seenOnce,'+seenOnce',num);
+        seenTwice = ~seenOnce & (seenTwice ^ num);
+        // console.log(seenTwice,'+seenTwice',num);
+      }
+
+      return seenOnce;
+
+  };
+  var arr = [2,2,3]
+  singleNumber(arr)
+</script>
