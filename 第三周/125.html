@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  /**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    var reg = /[^\d\w]/g
+    var a = s.replace(reg,'')
+    var up = a.toUpperCase()
+    var len = up.length
+    var len2 = parseInt(len/2)
+    var len1 = len-1
+    var i = 0
+    while(i < len2) {
+      if(up[i] !== up[len1-i]){
+        return false
+      }
+      i++
+    }
+    return true
+};
+var s = "A man, a plan, a canal: Panama"
+console.log(isPalindrome(s))
+</script>

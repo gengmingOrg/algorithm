@@ -1,0 +1,30 @@
+<script type="text/javascript">
+  var canConstruct = function(ransomNote, magazine) {
+    var map = new Map()
+    for (var i = 0; i < ransomNote.length; i++) {
+      if (map.has(ransomNote[i])) {
+        map.set(ransomNote[i], map.get(ransomNote[i]) + ransomNote[i])
+      } else {
+        map.set(ransomNote[i], ransomNote[i])
+      }
+    }
+
+    var mageMap = new Map()
+    for (var i = 0; i < magazine.length; i++) {
+      if (mageMap.has(magazine[i])) {
+        mageMap.set(magazine[i], mageMap.get(magazine[i]) + magazine[i])
+      } else {
+        mageMap.set(magazine[i], magazine[i])
+      }
+    }
+
+    // 循环这个
+    for (let key of mageMap.keys()) {
+      if(mageMap.get(key).slice(0,map.get(key).length) != map.get(key) ){
+        return false
+      }
+
+    }
+    return true
+  };
+</script>

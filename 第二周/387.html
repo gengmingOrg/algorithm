@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  /**
+   * @param {string} s
+   * @return {number}
+   */
+   var firstUniqChar = function(s) {
+       var map = new Map()
+       for (var i = 0; i < s.length; i++) {
+         if(map.has(s[i])){
+           map.set(s[i],'-' + map.get(s[i]))
+         }else {
+           map.set(s[i],i)
+         }
+       }
+       for (var value of map.values()) {
+         if(value[0] != '-'){
+             return value
+         }
+       }
+       return -1
+     };
+  var a = "itwqbtcdprfsuprkrjkausiterybzncbmdvkgljxuekizvaivszowqtmrttiihervpncztuoljftlxybpgwnjb"
+  console.log(firstUniqChar(a))
+</script>

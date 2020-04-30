@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  /**
+   * @param {string} s
+   * @return {string}
+   */
+  var frequencySort = function(s) {
+    if(s.length == 0) return s
+    var map = new Map()
+    var temp = []
+    var str = ''
+    for (var i = 0; i < s.length; i++) {
+      if(map.has(s[i])){
+        map.set(s[i], map.get(s[i]) + 1)
+      }else {
+        map.set(s[i], 1)
+      }
+    }
+    map.forEach((val, key) => {
+        temp.push({ val, key })
+    })
+    temp.sort((a, b) => b.val - a.val)
+    temp.forEach(item => {
+        str += item.key.repeat(item.val)
+    })
+    return str
+  };
+
+</script>

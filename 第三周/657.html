@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  /**
+ * @param {string} moves
+ * @return {boolean}
+ */
+var judgeCircle = function(moves) {
+    var map = new Map()
+    map.set('L',0)
+    map.set('U':0)
+    for(var i = 0 ; i < moves.length;i ++){
+        // if(map.has(moves[i])){
+        //     map.set(moves[i],(map.get(moves[i])+1)%4)
+        // }else {
+        //     map.set(moves[i],1)
+        // }
+        if(moves[i] == "U"){
+          map.set('U',map.get("U")+1)
+        }
+        if(moves[i] == "D"){
+          map.set('U',map.get("U")-1)
+        }
+        if(moves[i] == "L"){
+          map.set('U',map.get("L")+1)
+        }
+        if(moves[i] == "R"){
+          map.set('U',map.get("L")-1)
+        }
+    }
+    return (map.get("U")  != 0) ||  (map.get("L") != 0)
+};
+
+var moves = "UUDDLULDULRDRRRULLLRRUDUURUULLDLLLRDLDLLRDRLDRRRDDRUDUDLRDLDRRUDLRLUDDRULLRRDLRLRLRULULDDDLUULDLLURR"
+judgeCircle(moves)
+</script>

@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  /**
+   * @param {number} num
+   * @return {number}
+   */
+  var addDigits = function(num) {
+
+    var count = 0
+    while (true) {
+      count += num%10
+      num = paseInt(num/10)
+      if(num == 0){
+        if(count >=10 ){
+          num = count
+        }else {
+          return count
+        }
+      }
+
+    }
+  };
+</script>

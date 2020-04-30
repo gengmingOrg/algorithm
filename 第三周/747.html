@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  var dominantIndex = function(nums) {
+    if (nums.length == 1) {
+      return 0
+    }
+    var max2val = 2 * nums[0]
+    var maxval = nums[0]
+    var j = 0
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i] > maxval) {
+        max2val = 2 * maxval
+        maxval = nums[i]
+        j = i
+      }
+    }
+    if (maxval >=2* max2val ) {
+      return j
+    } else {
+      return -1
+    }
+  };
+
+  var nums = [0,0,1,3]
+  console.log(dominantIndex(nums))
+</script>

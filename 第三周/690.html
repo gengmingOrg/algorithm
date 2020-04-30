@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  /**
+   * Definition for Employee.
+   * function Employee(id, importance, subordinates) {
+   *     this.id = id;
+   *     this.importance = importance;
+   *     this.subordinates = subordinates;
+   * }
+   */
+
+  /**
+   * @param {Employee[]} employees
+   * @param {number} id
+   * @return {number}
+   */
+   var GetImportance = function(employees, id) {
+     res = 0;
+     let map = new Map();
+     employees.forEach(item=>{
+         map.set(item.id,item);
+     });
+     return dfs(map,id);
+ };
+ function dfs(map,id){
+     let employee = map.get(id);
+     console.log(employee);
+
+ }
+
+
+var employees =  [[1, 5, [2, 3]], [2, 3, [4]], [3, 3, [4]],[4,1,[]]]
+var id = 1
+
+console.log(GetImportance(employees, id))
+</script>
