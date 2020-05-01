@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  /**
+ * @param {number} num
+ * @return {string}
+ */
+var convertToBase7 = function(num) {
+  var str
+  if(num > 0){
+    str = ''
+  }else if(num < 0){
+    str = '-'
+    num = -num
+  }else {
+    return '0'
+  }
+  while (num !== 0 ) {
+    str += num %7
+    num = parseInt(num/7)
+  }
+  return str
+};
+</script>

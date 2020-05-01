@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    var reverseVowels = function(s) {
+      var set1 = new Set()
+      var i = 0
+      var j = s.length - 1
+      var arr =  ['a','e','i','o','u']
+     arr.forEach(x => set1.add(x));
+     var a = s.split('')
+      while (j>i) {
+        if(set1.has(s[i]) ){
+          if(set1.has(s[j])){
+            [a[i], a[j]] = [a[j], a[i]]
+            i++
+          }
+          j--
+          continue
+        }else if(set1.has(s[j])){
+          if(set1.has(s[i])){
+            [a[i], a[j]] = [a[j], a[i]]
+            j--
+          }
+          i++
+          continue
+        }else {
+          i++
+          j--
+        }
+      }
+      return a.join('')
+    };
+var a = 'hello'
+console.log(reverseVowels(a))
+</script>

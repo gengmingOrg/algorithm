@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  /**
+   * @param {string} secret
+   * @param {string} guess
+   * @return {string}
+   */
+  var getHint = function(secret, guess) {
+    var map = new Map
+    var A = 0
+    var B = 0
+    var temp = ''
+    for (let i = 0; i < secret.length; i++) {
+      if(secret[i] == guess[i]){
+        A++
+      }else {
+        temp += guess[i]
+        if(map.has(secret[i])){
+          map.set(secret[i],map.get(secret[i])+1)
+        }else {
+          map.set(secret[i],1)
+        }
+      }
+
+    }
+    for (let i = 0; i < temp.length; i++) {
+      if(map.has(temp[i]) && map.get(temp[i]) > 0){
+        B++
+      }
+    }
+    return `${A}A${B}B`
+  };
+
+  var secret = "1807"
+  var guess = "7810"
+  getHint(secret, guess)
+</script>

@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  /**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+var CheckPermutation = function(s1, s2) {
+  if(s1.length !== s2.length){
+    return false
+  }
+  var map = new Map()
+  var map1 = new Map()
+  for (var i = 0; i < s1.length; i++) {
+    if(map.has(s1[i])){
+      map.set(s1[i], map.get(s1[i]) + 1)
+    }else {
+      map.set(s1[i],count: 1)
+    }
+    if(map1.has(s2[i])){
+      map1.set(s2[i],count: map1.get(s2[i]) + 1)
+    }else {
+      map1.set(s2[i],count: 1)
+    }
+  }
+  for (var s of s1) {
+    if(map.get(s) != map1.get(s) ){
+      return false
+    }
+  }
+  return true
+};
+</script>
