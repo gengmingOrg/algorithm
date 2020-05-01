@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  /**
+ * @param {number[]} height
+ * @return {number}
+ */
+var trap = function(height) {
+    var left = 0
+    var right = height.length-1
+    var max = 0
+    var left_max = 0 // 左面最大值
+    var right_max = 0 //右面最大值
+    while (right > left ) {
+      if(height[left] > height[right]){
+        if(height[right] >= right_max){
+          right_max = height[right]
+        }else {
+          max += (right_max - height[right])
+        }
+        right--
+      }else {
+        if(height[left] >= left_max){
+          left_max = height[left]
+        }else {
+          max += (left_max - height[left])
+        }
+        left++
+      }
+
+    }
+    return max
+  };
+</script>

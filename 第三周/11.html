@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} height
+   * @return {number}
+   */
+  var maxArea = function(height) {
+    // var maxA = Math.min(height[0],height[1] )
+    // if(height.length == 2){
+    //   return maxA
+    // }
+    var maxA = 0
+    var start = 0 //开始的坐标
+    var end = height.length - 1
+    var len = height.length - 1
+    while (end > start) {
+
+      if(maxA < Math.min(height[start],height[end] )*len) {
+        maxA = Math.min(height[start],height[end] )*len
+      }
+      if(height[start] < height[end]){
+        start++
+      }else {
+        end--
+      }
+      len --
+    }
+    return maxA
+  };
+</script>
