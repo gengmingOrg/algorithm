@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} nums
+   * @return {number[]}
+   */
+  var smallerNumbersThanCurrent = function(nums) {
+    var temp = [...nums]
+    temp.sort((a,b) => a-b)
+    var map = {}
+    for (var i = temp.length - 1; i > -1; i--) {
+      map[temp[i]] = i
+    }
+    var arr = []
+    for (var i = 0; i < nums.length; i++) {
+      arr.push(map[nums[i]])
+    }
+    return arr
+  };
+</script>

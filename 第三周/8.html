@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  /**
+   * @param {string} str
+   * @return {number}
+   */
+  var myAtoi = function(str) {
+    var str1 = str.trim()
+      var reg = /(^[-+]\d+)|(^[\d]\d*)/g
+      var number = str1.match(reg)
+      if(number < Math.pow(-2, 31) || number > Math.pow(2, 31) - 1){
+         return number < Math.pow(-2, 31) ? Math.pow(-2, 31) : Math.pow(2, 31) - 1;
+      }
+
+      return number ? number[0] : 0  
+  };
+  var str = "4193 with words"
+  myAtoi(str)
+</script>

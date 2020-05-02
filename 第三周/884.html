@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  /**
+   * @param {string} A
+   * @param {string} B
+   * @return {string[]}
+   */
+  var uncommonFromSentences = function(A, B) {
+    var aArr = A.split(' ')
+    var bArr = B.split(' ')
+    var aMap = {}
+    // var bMap = {}
+    for (let i = 0; i < aArr.length; i++) {
+      if(aMap[aArr[i]]){
+        aMap[aArr[i]] += 1
+      }else {
+        aMap[aArr[i]] = 1
+      }
+    }
+    for (let i = 0; i < bArr.length; i++) {
+      if(aMap[bArr[i]]){
+        aMap[bArr[i]] += 1
+      }else {
+        aMap[bArr[i]] = 1
+      }
+    }
+    var arr = []
+    for (var variable in aMap) {
+      if (aMap.hasOwnProperty(variable)) {
+        if(aMap[variable] == 1){
+            arr.push(variable)
+        }
+      }
+    }
+    return sd
+  };
+</script>

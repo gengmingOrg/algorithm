@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  /**
+   * @param {string} S
+   * @return {string}
+   */
+  var removeDuplicates = function(s) {
+    var arr = []
+    for (var i = 0; i < s.length; i++) {
+      s[i]
+      if(arr[arr.length-1] == s[i]){
+        arr.length = arr.length - 1
+      }
+    }
+    return arr.join("")
+  };
+</script>
