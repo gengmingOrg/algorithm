@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} arr
+   * @return {boolean}
+   */
+  var uniqueOccurrences = function(arr) {
+    var map = {}
+    for (var i = 0; i < arr.length; i++) {
+      if(map[arr[i]]){
+        map[arr[i]] = map[arr[i]] + 1
+      }else {
+        map[arr[i]] = 1
+      }
+    }
+    var keys = Objec.keys(map)
+    var set = new Set()
+    for (var variable in map) {
+      if (map.hasOwnProperty(variable)) {
+        set.add(map[variable])
+      }
+    }
+    if(keys.length == [...set].length ){
+      return true
+    }
+    return false
+  };
+</script>

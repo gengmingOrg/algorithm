@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} nums
+   * @return {number[]}
+   */
+  var findDisappearedNumbers = function(nums) {
+    for (var i = 0; i < nums.length; i++) {
+      var newIndex = Math.abs(nums[i]) - 1;
+      if (nums[newIndex] > 0) {
+        nums[newIndex] *= -1;
+      }
+    }
+    var arr = []
+    for (var i = 0; i < nums.length; i++) {
+      if(nums[i] > 0){
+        arr.push(i+1)
+      }
+    }
+    console.log(arr);
+    return arr
+  };
+  var nums = [4, 3, 2, 7, 8, 2, 3, 1]
+  findDisappearedNumbers(nums)
+</script>

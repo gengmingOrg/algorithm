@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var thirdMax = function(nums) {
+   var arr = [null,null,null]
+   for (var i = 0; i < nums.length; i++) {
+     if(arr[0] <= nums[i]){
+       arr[0] = nums[i]
+       continue
+     }else if(arr[1] <= nums[i]){
+       arr[1] = nums[i]
+       continue
+     }else if(arr[2] <= nums[i]){
+       arr[2] = nums[i]
+       continue
+     }
+   }
+    
+  };
+</script>

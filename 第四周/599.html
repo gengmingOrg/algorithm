@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  /**
+ * @param {string[]} list1
+ * @param {string[]} list2
+ * @return {string[]}
+ */
+var findRestaurant = function(list1, list2) {
+  var map = {}
+ var index = -1
+ var arr = []
+ for (let i = 0; i < list1.length; i++) {
+   map[list1[i]] = i
+ }
+ for (let i = 0; i < list2.length; i++) {
+   if(map[list2[i]]){
+     if(i + map[list2[i]] < index || index == -1){
+       arr= [ist2[i]]
+       index = i + map[list2[i]]
+     }else if(i + map[list2[i]] == index){
+       arr.push(list2[i])
+     }
+   }
+ }
+ return arr
+};
+</script>

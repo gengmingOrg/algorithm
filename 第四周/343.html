@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  /**
+   * @param {number} n
+   * @return {number}
+   */
+  var integerBreak = function(n) {
+        switch (n) {
+          case 2:
+            return 1
+          case 3:
+            return 2
+          case 4:
+            return 4
+          default:
+            var nums = parseInt(n / 3)
+            var yu = n % 3
+            if (yu == 1) {
+              nums = nums - 1
+              yu = 4
+            } else if (yu == 0) {
+              yu = 1
+            }
+            return (3 ** nums) * yu
+        }
+  };
+</script>

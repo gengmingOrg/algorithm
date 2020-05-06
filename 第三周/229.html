@@ -1,0 +1,61 @@
+<script type="text/javascript">
+  /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var majorityElement = function(nums) {
+
+    var count1 = 0
+    var count2 = 0
+    var nums1 = [nums[0], count1]
+    var nums2 = [nums[0], count2]
+    for (var i = 0; i < nums.length; i++) {
+      if (nums1[0] == nums[i]) {
+        count1+=1
+        nums1[1] = count1
+      } else {
+        if (nums2[0] == nums[i]) {
+          count2+=1
+          nums2[1] = count2
+        } else {
+          // 全都不相等
+          if (count1 !== 0) {
+            count1-=1
+            nums1[1] = count1
+            if (count2 !== 0) {
+              count2-=1
+              nums2[1] = count2
+            } else {
+              count2 = 1
+              nums2 = [nums[i], count2]
+            }
+          } else {
+            count1 = 1
+            nums1 = [nums[i], count1]
+          }
+        }
+      }
+    }
+    console.log(nums1,nums2);
+    var len = parseInt(nums.length/3)
+    var map = {
+      [nums1[0]]: 0,
+      [nums2[0]]: 0
+    }
+    for (var i = 0; i < nums.length; i++) {
+      if(map[nums[i]]){
+        map[nums[i]] = map[nums[i]] + 1
+      }
+    }
+    var arr = []
+    if(map[nums1[0]] >= len){
+      arr.push(map[nums1[0]])
+    }
+    if(map[nums2[0]] >= len){
+      arr.push(map[nums2[0]])
+    }
+    return arr
+};
+var arr = [3,2,3]
+majorityElement(arr)
+</script>

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var arrayPairSum = function(nums) {
+    var count = 0
+    nums.sort((a,b)=>{return a-b})
+    for (var i = 0; i < nums.length; i++) {
+      nums[i]
+      if(i%2 == 0){
+        count+=nums[i]
+      }
+    }
+    return count
+  };
+</script>

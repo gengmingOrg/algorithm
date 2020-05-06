@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  /**
+   * @param {number} n
+   * @return {string[]}
+   */
+   // Fizz
+   // Buzz
+   // FizzBuzz
+  var fizzBuzz = function(n) {
+    var arr = []
+    while (n > 0) {
+      if(n%15 == 0){
+          n--
+          arr.push('FizzBuzz')
+          continue
+      }
+      if(n%5 == 0){
+        n--
+        arr.push('Buzz')
+        continue
+      }
+      if(n%3 == 0){
+        n--
+        arr.push('Fizz')
+        continue
+      }
+      arr.push(n)
+      n--
+    }
+    return arr
+  };
+</script>
